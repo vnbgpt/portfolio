@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Vitalii YURINA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="bg-grid"></div>
+  <div class="noise"></div>
+  <div id="spot" aria-hidden="true"></div>
+
+  <aside class="sidebar">
+    <div class="side-top">
+      <div class="avatar" title="Vitalii">V</div>
+
+      <div class="status" title="Site actif">
+        <span class="dot dot-blink"></span>
+        <span class="txt">Portfolio</span>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <a class="nav-link active" href="#accueil">Accueil</a>
+      <a class="nav-link" href="#apropos">À propos</a>
+
+      <a class="nav-link nav-bts" href="#bts" id="btsLink" aria-expanded="false">
+        <span class="nav-bts-text">BTS SIO</span>
+        <span class="chev" aria-hidden="true">▾</span>
+      </a>
+
+      <div class="submenu" id="btsSub" aria-hidden="true">
+        <a class="nav-link sub-link" href="#sisr">SISR</a>
+        <a class="nav-link sub-link" href="#slam">SLAM</a>
+      </div>
+
+      <a class="nav-link" href="#ecole">École / Entreprise</a>
+      <a class="nav-link" href="#missions">Missions (E5)</a>
+      <a class="nav-link" href="#projets">Projets (E6)</a>
+      <a class="nav-link" href="#veille">Veille techno</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+
+    <div class="side-bottom">
+      <button class="mini mini-btn" id="themeToggle" type="button" aria-pressed="false">
+        <div class="mini-title">Thème</div>
+        <div class="mini-value" id="themeLabel">Dark</div>
+      </button>
+
+      <div class="mini">
+        <div class="mini-title">Année</div>
+        <div class="mini-value"><span id="year"></span></div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <section id="accueil" class="section hero">
+      <div class="container">
+        <div class="hero-card glass">
+          <div class="badge">Portfolio — Oral E5/E6</div>
+
+          <h1>Bonjour, je m’appelle <span class="neon">Vitalii YURINA</span>.</h1>
+
+          <p class="lead">
+            Bienvenue sur mon portfolio : ici tu peux accéder rapidement à mes projets, missions
+            et à mon parcours.
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="#apropos">Voir mon profil</a>
+            <a class="btn" href="#projets">Voir les projets</a>
+          </div>
+        </div>
+
+        <div class="hero-panels">
+          <div class="panel glass">
+            <div class="panel-top">
+              <div class="panel-k">Objectif</div>
+              <div class="panel-v neon-soft">Oral BTS</div>
+            </div>
+            <div class="panel-desc">E5/E6 • preuves • clarté</div>
+          </div>
+
+          <div class="panel glass">
+            <div class="panel-top">
+              <div class="panel-k">Option</div>
+              <div class="panel-v neon-soft">SISR</div>
+            </div>
+            <div class="panel-desc">Infra • réseau • sécurité</div>
+          </div>
+
+          <div class="panel glass">
+            <div class="panel-top">
+              <div class="panel-k">Projets</div>
+              <div class="panel-v neon-soft">E6</div>
+            </div>
+            <div class="panel-desc">Solutions + docs + tests</div>
+          </div>
+
+          <div class="panel glass">
+            <div class="panel-top">
+              <div class="panel-k">Missions</div>
+              <div class="panel-v neon-soft">E5</div>
+            </div>
+            <div class="panel-desc">Contexte • actions • résultats</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="apropos" class="section">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- ✅ PROFIL (plus complet) -->
+          <div class="about-left">
+            <div class="glass card card-hero">
+              <div class="card-top">
+                <div class="card-icon">👤</div>
+                <div>
+                  <div class="card-k">Profil</div>
+                  <div class="card-v">Vitalii YURINA</div>
+                </div>
+              </div>
+
+              <p class="about-text">
+                Bonjour, je m’appelle <strong>Vitalii YURINA</strong>. Je suis actuellement en
+                <strong>1ère année de BTS SIO</strong>, option <strong>SISR</strong> (réseaux, systèmes, infrastructure).
+                J’aime comprendre <strong>comment un SI fonctionne</strong> : l’adressage IP, les services, l’administration
+                et la sécurité.
+              </p>
+
+              <p class="about-text">
+                Mon objectif, à l’avenir, est de m’orienter vers la <strong>cybersécurité</strong> :
+                sécuriser des environnements (réseau/systèmes), apprendre les bonnes pratiques (RGPD, durcissement, sauvegardes),
+                et progresser avec des <strong>labs</strong> + des projets concrets.
+              </p>
+
+              <p class="about-text">
+                Je suis quelqu’un de <strong>rigoureux</strong> et je préfère travailler avec une méthode claire :
+                <strong>contexte → action → résultat</strong> (comme à l’oral E5/E6).
+              </p>
+
+              <div class="tags tags-strong">
+                <span class="tag">Windows / Linux</span>
+                <span class="tag">VLAN / DHCP / DNS</span>
+                <span class="tag">AD / GPO</span>
+                <span class="tag">Sécurité / RGPD</span>
+              </div>
+            </div>
+
+            <div class="glass card card-mini">
+              <div class="mini-row two">
+                <div class="mini-pill">
+                  <div class="mini-k">Focus</div>
+                  <div class="mini-v">SISR</div>
+                </div>
+                <div class="mini-pill">
+                  <div class="mini-k">Objectif</div>
+                  <div class="mini-v">Cybersécurité</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ✅ EXPÉRIENCES (ne pas toucher) -->
+          <div class="about-right">
+            <div class="glass card">
+              <div class="card-top">
+                <div class="card-icon">💼</div>
+                <div>
+                  <div class="card-k">Expériences</div>
+                  <div class="card-v">Pro & terrain</div>
+                </div>
+              </div>
+
+              <div class="xp2">
+                <div class="xp2-head">
+                  <div class="xp2-title">Olinn Mobile</div>
+                  <div class="xp2-badge">Support / Réparation</div>
+                </div>
+                <ul class="xp2-list">
+                  <li>Réparation produits informatiques : diagnostics, PC, périphériques</li>
+                  <li>Installation / configuration Windows (drivers, logiciels, dépannage)</li>
+                  <li>Conseil client + tests avant restitution</li>
+                </ul>
+              </div>
+
+              <div class="xp2 sep">
+                <div class="xp2-head">
+                  <div class="xp2-title">Circle Consulting</div>
+                  <div class="xp2-badge">IT / Infra</div>
+                </div>
+                <ul class="xp2-list">
+                  <li>Support IT + gestion des tickets (incidents, demandes)</li>
+                  <li>Réseau : vérifications, basiques VLAN / DNS / DHCP</li>
+                  <li>Préparation / mise en place postes + comptes (onboarding)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BTS -->
+    <section id="bts" class="section">
+      <div class="container center">
+        <h2 class="big-title">Qu’est-ce que le BTS SIO ?</h2>
+
+        <div class="stack">
+          <div class="glass card">
+            <p>
+              Le <strong>BTS SIO</strong> (Services Informatiques aux Organisations) est un diplôme de niveau
+              <strong>Bac +2</strong> orienté entreprise. Il forme à l’assistance informatique, au réseau,
+              aux systèmes et au développement, avec des situations concrètes (TP) et des projets.
+            </p>
+            <p class="muted mt">
+              Pendant la formation, on apprend à <strong>déployer</strong> et <strong>maintenir</strong> des services,
+              à résoudre des incidents, à documenter, et à justifier ses choix (important pour l’oral).
+            </p>
+          </div>
+
+          <div class="glass card">
+            <p>
+              Le BTS SIO se compose de deux options :
+              <strong>SISR</strong> (infrastructure, systèmes, réseaux) et <strong>SLAM</strong>
+              (développement d’applications et solutions logicielles).
+            </p>
+
+            <ul class="info-list mt">
+              <li>Compétences : support, services, sécurité, méthode et documentation</li>
+              <li>Enjeux : disponibilité, fiabilité, traçabilité, bonnes pratiques</li>
+              <li>Oral : preuves, explications, démarche projet (E5/E6)</li>
+            </ul>
+
+            <div class="cta center-cta">
+              <a class="btn primary" href="#sisr">Voir SISR</a>
+              <a class="btn" href="#slam">Voir SLAM</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SISR -->
+    <section id="sisr" class="section">
+      <div class="container center">
+        <h2 class="big-title">Option A : SISR</h2>
+
+        <div class="stack">
+          <div class="glass card center">
+            <p>
+              L’option <strong>SISR</strong> (Solutions d’Infrastructure, Systèmes et Réseaux) forme des professionnels
+              capables d’installer, configurer et administrer des infrastructures informatiques.
+            </p>
+            <p class="muted mt">
+              Concrètement : mise en place de services, gestion des utilisateurs, supervision, et sécurisation du SI.
+            </p>
+          </div>
+
+          <div class="glass card">
+            <ul class="info-list">
+              <li><strong>Réseau :</strong> adressage IP, VLAN, routage de base, DHCP, DNS</li>
+              <li><strong>Systèmes :</strong> Windows / Linux, comptes, droits, services, sauvegardes</li>
+              <li><strong>Sécurité :</strong> règles, durcissement, segmentation, bonnes pratiques</li>
+              <li><strong>Support :</strong> diagnostic, résolution d’incidents, documentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLAM -->
+    <section id="slam" class="section">
+      <div class="container center">
+        <h2 class="big-title">Option B : SLAM</h2>
+
+        <div class="stack">
+          <div class="glass card center">
+            <p>
+              L’option <strong>SLAM</strong> (Solutions Logicielles et Applications Métiers) est orientée développement.
+              Elle forme à concevoir et maintenir des applications utiles aux entreprises.
+            </p>
+            <p class="muted mt">
+              On part d’un besoin, on propose une solution, on développe, on teste, et on documente.
+            </p>
+          </div>
+
+          <div class="glass card">
+            <ul class="info-list">
+              <li><strong>Développement :</strong> applications web, API, scripts, logique métier</li>
+              <li><strong>Données :</strong> bases de données, requêtes, modélisation</li>
+              <li><strong>Qualité :</strong> tests, maintenance, correction, évolution</li>
+              <li><strong>Projet :</strong> cahier des charges, doc, démonstration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÉCOLE / ENTREPRISE -->
+    <section id="ecole" class="section">
+      <div class="container">
+        <div class="split-grid">
+
+          <div class="glass card card-hero">
+            <div class="card-top">
+              <div class="card-icon">🏫</div>
+              <div>
+                <div class="card-k">École</div>
+                <div class="card-v">Ynov Campus Paris</div>
+              </div>
+            </div>
+
+            <p class="about-text">
+              Je suis en <strong>BTS SIO</strong> (option <strong>SISR</strong>). La formation est orientée
+              pratique : réseaux, systèmes, sécurité, et préparation à l’oral <strong>E5/E6</strong>.
+            </p>
+
+            <div class="tags tags-strong">
+              <span class="tag">Réseaux</span>
+              <span class="tag">Systèmes</span>
+              <span class="tag">Cybersécurité</span>
+              <span class="tag">Projets</span>
+            </div>
+
+            <div class="mini-row two mt">
+              <div class="mini-pill">
+                <div class="mini-k">Objectif</div>
+                <div class="mini-v">Structuré</div>
+              </div>
+              <div class="mini-pill">
+                <div class="mini-k">Méthode</div>
+                <div class="mini-v">Pratique</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass card">
+            <div class="card-top">
+              <div class="card-icon">🏢</div>
+              <div>
+                <div class="card-k">Entreprise</div>
+                <div class="card-v">Circle Consulting</div>
+              </div>
+            </div>
+
+            <p class="about-text">
+              En alternance, je fais du <strong>support IT</strong> et j’interviens sur des besoins
+              <strong>infra</strong> : tickets, préparation de postes, et vérifications réseau
+              (VLAN/DNS/DHCP selon les cas).
+            </p>
+
+            <div class="xp2">
+              <div class="xp2-head">
+                <div class="xp2-title">Ce que je fais concrètement</div>
+                <div class="xp2-badge">Alternance</div>
+              </div>
+              <ul class="xp2-list">
+                <li>Gestion des incidents et demandes (outil tickets)</li>
+                <li>Mise en place de postes / comptes + onboarding</li>
+                <li>Contrôles réseau basiques + assistance infra</li>
+              </ul>
+            </div>
+
+            <div class="tags mt tags-soft">
+              <span class="tag">Support</span>
+              <span class="tag">Infra</span>
+              <span class="tag">Tickets</span>
+              <span class="tag">Onboarding</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSIONS -->
+    <section id="missions" class="section">
+      <div class="container">
+        <div class="missions-head center">
+          <h2 class="big-title">Missions (E5)</h2>
+          <p class="muted">Contexte → actions → résultats → preuves.</p>
+        </div>
+
+        <div class="missions-wrap glass">
+          <div class="missions-grid">
+
+            <article class="mission-card">
+              <div class="mission-top">
+                <div class="mission-num">01</div>
+                <div class="mission-title">DHCP</div>
+              </div>
+              <p class="mission-text">
+                Le DHCP attribue automatiquement une adresse IP aux appareils connectés au réseau,
+                ce qui évite la configuration manuelle.
+              </p>
+              <ul class="mission-list">
+                <li>Objectif : IP auto + passerelle + DNS</li>
+                <li>Intérêt : gain de temps + moins d’erreurs</li>
+              </ul>
+            </article>
+
+            <article class="mission-card">
+              <div class="mission-top">
+                <div class="mission-num">02</div>
+                <div class="mission-title">Apache</div>
+              </div>
+              <p class="mission-text">
+                Apache est un serveur web très connu. Il héberge un site et permet de l’afficher
+                quand on tape l’adresse dans un navigateur.
+              </p>
+              <ul class="mission-list">
+                <li>Objectif : hébergement web</li>
+                <li>Base : fichiers de config + service</li>
+              </ul>
+            </article>
+
+            <article class="mission-card">
+              <div class="mission-top">
+                <div class="mission-num">03</div>
+                <div class="mission-title">Installation & synchronisation OCS</div>
+              </div>
+              <p class="mission-text">
+                OCS Inventory est un outil qui scanne le réseau de l’entreprise pour inventorier
+                le matériel et les logiciels présents sur les PC.
+              </p>
+              <ul class="mission-list">
+                <li>Objectif : inventaire automatique</li>
+                <li>Résultat : suivi du parc + visibilité</li>
+              </ul>
+            </article>
+
+            <article class="mission-card">
+              <div class="mission-top">
+                <div class="mission-num">04</div>
+                <div class="mission-title">Installation GLPI</div>
+              </div>
+              <p class="mission-text">
+                GLPI centralise l’inventaire et sert aussi de plateforme de support technique
+                (gestion des tickets quand un employé a un problème).
+              </p>
+              <ul class="mission-list">
+                <li>Objectif : tickets + suivi</li>
+                <li>Intérêt : traçabilité + historique</li>
+              </ul>
+            </article>
+
+            <article class="mission-card">
+              <div class="mission-top">
+                <div class="mission-num">05</div>
+                <div class="mission-title">VLSM</div>
+              </div>
+              <p class="mission-text">
+                Le VLSM découpe un réseau IP en sous-réseaux de tailles différentes selon les besoins,
+                pour optimiser l’utilisation des adresses.
+              </p>
+              <ul class="mission-list">
+                <li>Objectif : sous-réseaux adaptés</li>
+                <li>Résultat : moins de gaspillage IP</li>
+              </ul>
+            </article>
+
+            <article class="mission-card">
+              <div class="mission-top">
+                <div class="mission-num">06</div>
+                <div class="mission-title">VLAN</div>
+              </div>
+              <p class="mission-text">
+                Un VLAN sépare logiquement un réseau en plusieurs parties, même si les appareils sont
+                sur le même switch. Cela améliore la sécurité et réduit le trafic.
+              </p>
+              <ul class="mission-list">
+                <li>Objectif : isoler des groupes</li>
+                <li>Intérêt : sécurité + organisation</li>
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets" class="section">
+      <div class="container">
+        <div class="glass card">
+          <h2>Projets (E6)</h2>
+          <p class="muted">Besoin → solution → tests → documentation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="veille" class="section">
+      <div class="container">
+        <div class="glass card">
+          <h2>Veille technologique</h2>
+          <p class="muted">Sujets + sources + résumé + impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="glass card">
+          <h2>Contact</h2>
+          <p>Email : <strong>tonmail@email.com</strong></p>
+          <div class="footer">© <span id="year2"></span> — Vitalii YURINA</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
