@@ -117,7 +117,6 @@
       <div class="container">
         <div class="about-grid">
 
-          <!-- ✅ PROFIL (plus complet) -->
           <div class="about-left">
             <div class="glass card card-hero">
               <div class="card-top">
@@ -168,7 +167,6 @@
             </div>
           </div>
 
-          <!-- ✅ EXPÉRIENCES (ne pas toucher) -->
           <div class="about-right">
             <div class="glass card">
               <div class="card-top">
@@ -194,12 +192,12 @@
               <div class="xp2 sep">
                 <div class="xp2-head">
                   <div class="xp2-title">Circle Consulting</div>
-                  <div class="xp2-badge">IT / Infra</div>
+                  <div class="xp2-badge">Entreprise</div>
                 </div>
                 <ul class="xp2-list">
-                  <li>Support IT + gestion des tickets (incidents, demandes)</li>
-                  <li>Réseau : vérifications, basiques VLAN / DNS / DHCP</li>
-                  <li>Préparation / mise en place postes + comptes (onboarding)</li>
+                  <li>Présentation de l’entreprise (activité, contexte pro)</li>
+                  <li>Préparation pour une alternance l’année prochaine</li>
+                  <li>Objectif : appliquer ce que j’apprends en BTS</li>
                 </ul>
               </div>
             </div>
@@ -320,25 +318,25 @@
             </div>
 
             <p class="about-text">
-              Je suis en <strong>BTS SIO</strong> (option <strong>SISR</strong>). La formation est orientée
-              pratique : réseaux, systèmes, sécurité, et préparation à l’oral <strong>E5/E6</strong>.
+              Ynov Campus est une école supérieure qui propose plusieurs domaines (pas seulement l’informatique) :
+              numérique, design, marketing, audiovisuel, 3D, communication, et aussi cybersécurité selon les parcours.
             </p>
 
             <div class="tags tags-strong">
-              <span class="tag">Réseaux</span>
-              <span class="tag">Systèmes</span>
-              <span class="tag">Cybersécurité</span>
               <span class="tag">Projets</span>
+              <span class="tag">Pratique</span>
+              <span class="tag">Méthode</span>
+              <span class="tag">Travail en équipe</span>
             </div>
 
             <div class="mini-row two mt">
               <div class="mini-pill">
-                <div class="mini-k">Objectif</div>
-                <div class="mini-v">Structuré</div>
+                <div class="mini-k">Approche</div>
+                <div class="mini-v">Concrète</div>
               </div>
               <div class="mini-pill">
-                <div class="mini-k">Méthode</div>
-                <div class="mini-v">Pratique</div>
+                <div class="mini-k">Objectif</div>
+                <div class="mini-v">Professionnel</div>
               </div>
             </div>
           </div>
@@ -353,28 +351,15 @@
             </div>
 
             <p class="about-text">
-              En alternance, je fais du <strong>support IT</strong> et j’interviens sur des besoins
-              <strong>infra</strong> : tickets, préparation de postes, et vérifications réseau
-              (VLAN/DNS/DHCP selon les cas).
+              Circle Consulting est une entreprise de conseil et de services liés au numérique, qui accompagne des clients
+              sur des besoins technologiques et des projets digitaux.
             </p>
 
-            <div class="xp2">
-              <div class="xp2-head">
-                <div class="xp2-title">Ce que je fais concrètement</div>
-                <div class="xp2-badge">Alternance</div>
-              </div>
-              <ul class="xp2-list">
-                <li>Gestion des incidents et demandes (outil tickets)</li>
-                <li>Mise en place de postes / comptes + onboarding</li>
-                <li>Contrôles réseau basiques + assistance infra</li>
-              </ul>
-            </div>
-
             <div class="tags mt tags-soft">
-              <span class="tag">Support</span>
-              <span class="tag">Infra</span>
-              <span class="tag">Tickets</span>
-              <span class="tag">Onboarding</span>
+              <span class="tag">Conseil</span>
+              <span class="tag">Services</span>
+              <span class="tag">Projets</span>
+              <span class="tag">Clients</span>
             </div>
           </div>
 
@@ -506,11 +491,61 @@
       </div>
     </section>
 
+    <!-- ✅ CONTACT (MODIFIÉ) -->
     <section id="contact" class="section">
       <div class="container">
         <div class="glass card">
-          <h2>Contact</h2>
-          <p>Email : <strong>tonmail@email.com</strong></p>
+
+          <div class="contact-head">
+            <div class="contact-title">
+              <h2>Contact</h2>
+              <p class="muted">Tu peux me contacter par email / téléphone, ou laisser un message (formulaire visuel).</p>
+            </div>
+          </div>
+
+          <div class="contact-grid">
+
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-k">Email</div>
+                <a class="contact-v" href="mailto:vitaliy.yurina2011@gmail.com">vitaliy.yurina2011@gmail.com</a>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-k">Téléphone</div>
+                <a class="contact-v" href="tel:+33641347203">06 41 34 72 03</a>
+              </div>
+
+              <div class="contact-note">
+                <div class="contact-k">Note</div>
+                <div class="contact-v">
+                  Le bouton “Envoyer” est volontairement <strong>visuel</strong> (pas d’envoi réel).
+                </div>
+              </div>
+            </div>
+
+            <form class="contact-form" action="#" onsubmit="return false;">
+              <div class="field">
+                <label for="cname">Nom</label>
+                <input id="cname" type="text" placeholder="Ton nom" autocomplete="off" />
+              </div>
+
+              <div class="field">
+                <label for="cemail">Email</label>
+                <input id="cemail" type="email" placeholder="tonmail@email.com" autocomplete="off" />
+              </div>
+
+              <div class="field">
+                <label for="cmsg">Message</label>
+                <textarea id="cmsg" rows="5" placeholder="Écris ton message ici..."></textarea>
+              </div>
+
+              <button class="btn primary contact-send" type="submit">Envoyer</button>
+              <div class="contact-hint">Formulaire de démonstration (aucun message n’est envoyé).</div>
+            </form>
+
+          </div>
+
           <div class="footer">© <span id="year2"></span> — Vitalii YURINA</div>
         </div>
       </div>
