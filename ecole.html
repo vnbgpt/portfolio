@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Entreprise — Vitalii Yurina</title>
+  <meta name="description" content="Mon entreprise : Circle Consulting, ESN basée à Sèvres — présentation, services et mes activités."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    /* ---------- PAGE : ENTREPRISE ---------- */
+    .e-intro { border-left: 3px solid var(--violet); margin-bottom: 1.5rem; padding: 2.2rem; }
+    .e-intro:hover { transform: none; }
+    .e-intro-top { display: flex; align-items: center; gap: 1.1rem; margin-bottom: 1.4rem; }
+    .e-logo { width: 56px; height: 56px; flex-shrink: 0; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; background: rgba(239,111,94,.1); border: 1px solid var(--card-border); box-shadow: 0 0 24px rgba(239,111,94,.25); }
+    .e-intro-text { color: var(--grey); font-size: 1.1rem; line-height: 1.85; }
+    .e-intro-text strong { color: var(--white); }
+    .e-intro-text .hl { color: var(--violet-l); font-weight: 600; }
+
+    .e-facts { display: grid; grid-template-columns: repeat(5, 1fr); gap: .8rem; margin-top: 1.8rem; }
+    .e-fact { background: rgba(239,111,94,.06); border: 1px solid var(--card-border); border-radius: 8px; padding: .9rem 1rem; transition: border-color .3s, transform .3s var(--ease); }
+    .e-fact:hover { border-color: var(--violet-l); transform: translateY(-3px); }
+    .e-fact-icon { font-size: 1.2rem; display: block; margin-bottom: .4rem; }
+    .e-fact-label { font-family: var(--font-mono); font-size: .62rem; letter-spacing: 1px; text-transform: uppercase; color: var(--grey); margin-bottom: .25rem; }
+    .e-fact-val { font-family: var(--font-mono); font-size: .85rem; color: var(--cyan); line-height: 1.4; }
+    .e-fact-val small { display: block; font-size: .68rem; color: var(--grey); margin-top: .15rem; }
+
+    .e-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .e-card { height: 100%; }
+    .e-card-head { display: flex; align-items: center; gap: .8rem; margin-bottom: 1.1rem; }
+    .e-card-icon { width: 42px; height: 42px; flex-shrink: 0; border-radius: 10px; background: rgba(239,111,94,.1); border: 1px solid var(--card-border); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+    .e-card h3 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--white); }
+    .e-card p { color: var(--grey); font-size: 1.02rem; line-height: 1.85; }
+    .e-card p + .e-pillars { margin-top: 1rem; }
+
+    .e-pillars { list-style: none; display: flex; flex-direction: column; gap: .8rem; }
+    .e-pillars li { position: relative; padding: .8rem 1rem .8rem 1.1rem; background: rgba(6,182,212,.06); border: 1px solid rgba(6,182,212,.2); border-left: 3px solid var(--cyan); border-radius: 8px; color: var(--grey); font-size: .98rem; line-height: 1.65; transition: border-color .3s, background .3s; }
+    .e-pillars li:hover { background: rgba(6,182,212,.12); border-color: rgba(6,182,212,.45); }
+    .e-pillars li:nth-child(2) { border-left-color: var(--violet-l); background: rgba(239,111,94,.06); border-color: rgba(239,111,94,.2); border-left-color: var(--violet-l); }
+    .e-pillars li:nth-child(3) { border-left-color: var(--green); background: rgba(34,197,94,.06); border-color: rgba(34,197,94,.2); border-left-color: var(--green); }
+    .e-pillars strong { display: block; font-family: var(--font-mono); font-size: .8rem; letter-spacing: .5px; color: var(--white); margin-bottom: .15rem; }
+
+    @media (max-width: 1050px) { .e-facts { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 750px) { .e-two { grid-template-columns: 1fr; } .e-facts { grid-template-columns: repeat(2, 1fr); } .e-intro { padding: 1.4rem; } }
+    @media (max-width: 420px) { .e-facts { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="cursor"></div><div class="cursor-trail"></div>
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-glow"></div>
+
+  <nav class="navbar" id="navbar"></nav>
+
+  <main class="page-wrapper">
+    <div class="terminal-badge reveal">
+      <span class="term-user">vitalii</span><span class="term-path">@portfolio:~/entreprise$</span><span class="term-cmd">cat circle_consulting.txt</span><span class="term-cursor"></span>
+    </div>
+
+    <div class="section-header reveal">
+      <span class="section-num">// entreprise</span>
+      <h2 class="section-title">Mon entreprise : <span class="neon-text">Circle Consulting</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- ===== Présentation ===== -->
+    <div class="cyber-card e-intro reveal delay-1">
+      <div class="card-corner tl"></div><div class="card-corner tr"></div><div class="card-corner bl"></div><div class="card-corner br"></div>
+      <div class="e-intro-top">
+        <div class="e-logo">🏢</div>
+        <p class="e-intro-text"><span class="hl">Circle Consulting</span> est une entreprise française immatriculée à Sèvres (92310, Hauts-de-Seine). Son siège social est situé au <strong>2 Avenue de la Cristallerie</strong>.</p>
+      </div>
+
+      <div class="e-facts">
+        <div class="e-fact"><span class="e-fact-icon">📅</span><div class="e-fact-label">Date de création</div><div class="e-fact-val">12 septembre 2023<small>(immatriculation de la société)</small></div></div>
+        <div class="e-fact"><span class="e-fact-icon">⚖️</span><div class="e-fact-label">Forme juridique</div><div class="e-fact-val">SAS<small>(Société par actions simplifiée)</small></div></div>
+        <div class="e-fact"><span class="e-fact-icon">💶</span><div class="e-fact-label">Capital social</div><div class="e-fact-val">720 000 €</div></div>
+        <div class="e-fact"><span class="e-fact-icon">👥</span><div class="e-fact-label">Taille</div><div class="e-fact-val">Petite structure</div></div>
+        <div class="e-fact"><span class="e-fact-icon">📈</span><div class="e-fact-label">Chiffre d'affaires</div><div class="e-fact-val">7,5 M€</div></div>
+      </div>
+    </div>
+
+    <!-- ===== Services + activités ===== -->
+    <div class="e-two">
+      <div class="cyber-card e-card reveal delay-1">
+        <div class="card-corner tl"></div><div class="card-corner tr"></div><div class="card-corner bl"></div><div class="card-corner br"></div>
+        <div class="e-card-head"><div class="e-card-icon">🎯</div><h3>Services &amp; objectifs</h3></div>
+        <p>Passionné par la technique, j'accompagne mes clients dans l'optimisation de leur environnement numérique à travers trois piliers :</p>
+        <ul class="e-pillars">
+          <li><strong>Maintenance &amp; Réparation</strong>diagnostic précis et remise en état de MacBook et PC.</li>
+          <li><strong>Gestion MDM</strong>déploiement et sécurisation de flottes d'appareils à distance.</li>
+          <li><strong>Configuration &amp; Réseaux</strong>installation complète de systèmes et conception de réseaux performants et sécurisés.</li>
+        </ul>
+      </div>
+
+      <div class="cyber-card e-card reveal delay-2">
+        <div class="card-corner tl"></div><div class="card-corner tr"></div><div class="card-corner bl"></div><div class="card-corner br"></div>
+        <div class="e-card-head"><div class="e-card-icon">🛠️</div><h3>Mes activités</h3></div>
+        <p>Chez Circle Consulting, je m'occupe principalement du <strong>Service Après-Vente (SAV)</strong> pour le matériel informatique. Lorsqu'un client nous renvoie un appareil en panne, je réalise un diagnostic pour trouver l'origine du problème. Je m'occupe ensuite des réparations, que ce soit en changeant une pièce défectueuse ou en réglant un souci de logiciel. Pour finir, je teste toujours l'appareil pour m'assurer qu'il fonctionne parfaitement avant de le renvoyer au client.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Missions E5 — Vitalii Yurina</title>
+  <meta name="description" content="Épreuve E5 : tableau de synthèse, dossiers techniques et projets de Vitalii Yurina — BTS SIO SISR."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <div class="cursor"></div><div class="cursor-trail"></div>
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-glow"></div>
+
+  <nav class="navbar" id="navbar"></nav>
+
+  <main class="page-wrapper">
+    <div class="terminal-badge reveal">
+      <span class="term-user">root@vitalii</span><span class="term-path">:~/missions#</span><span class="term-cmd">ls -la ./e5-dossiers/</span><span class="term-cursor"></span>
+    </div>
+
+    <div class="section-header reveal">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Épreuve <span class="neon-text">E5</span> — Dossiers Techniques</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- ===== Présentation de l'épreuve + tableau de synthèse ===== -->
+    <div class="e5-intro cyber-card reveal delay-1">
+      <div class="card-corner tl"></div><div class="card-corner tr"></div>
+      <div class="card-corner bl"></div><div class="card-corner br"></div>
+
+      <p>L'épreuve <strong>E5</strong> vise à évaluer la capacité du candidat à répondre aux besoins d'une organisation en concevant, déployant et maintenant des solutions d'infrastructure réseau et système.</p>
+      <p>Elle se déroule sous la forme d'une présentation orale de 30 minutes s'appuyant sur un dossier technique. Le jury évalue ma maîtrise des compétences du référentiel SISR à travers les réalisations présentées dans mon <strong>Tableau de Synthèse</strong>.</p>
+
+      <h3 class="e5-preview-title">👁 Aperçu de mon Tableau de Synthèse</h3>
+      <div class="e5-pdf-frame">
+        <iframe src="docs/Tableau_de_Synthese_Vitalii_Yurina.pdf#view=FitH" title="Tableau de synthèse des réalisations professionnelles" loading="lazy">
+          <p>Votre navigateur ne peut pas afficher le PDF. <a href="docs/Tableau_de_Synthese_Vitalii_Yurina.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a></p>
+        </iframe>
+      </div>
+      <div class="e5-dl">
+        <a href="docs/Tableau_de_Synthese_Vitalii_Yurina.pdf" download class="btn btn-primary">⬇ Télécharger mon Tableau de Synthèse (PDF)</a>
+      </div>
+    </div>
+
+    <!-- ===== Projets d'école (documentations) ===== -->
+    <div class="missions-section-label reveal"><span>▶ Projets d'école</span></div>
+    <p class="proj-intro reveal delay-1">L'ensemble des projets et travaux pratiques réalisés en formation. Chaque document détaille la procédure, les choix techniques et les résultats obtenus.</p>
+    <div class="proj-list reveal delay-1">
+      <div class="proj-row">
+        <span class="proj-icon">🔐</span>
+        <span class="proj-title">Chiffrer les données</span>
+        <a href="docs/Chiffrer_les_donnees.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">👥</span>
+        <span class="proj-title">Administration d'Active Directory</span>
+        <a href="docs/Active_Directory.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🎛️</span>
+        <span class="proj-title">Stratégies de groupe (GPO)</span>
+        <a href="docs/GPO.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🔑</span>
+        <span class="proj-title">Droits et permissions</span>
+        <a href="docs/Droits_et_permissions.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🛡️</span>
+        <span class="proj-title">Durcissement du système (hardening)</span>
+        <a href="docs/Hardening.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🧩</span>
+        <span class="proj-title">Composants internes d'un ordinateur</span>
+        <a href="docs/Composants_internes.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">💽</span>
+        <span class="proj-title">Gestion des disques</span>
+        <a href="docs/Gestion_des_disques.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">📝</span>
+        <span class="proj-title">Mémo sur les disques</span>
+        <a href="docs/Memo_disques.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🧱</span>
+        <span class="proj-title">Volumes logiques (LVM)</span>
+        <a href="docs/LVM.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🔄</span>
+        <span class="proj-title">Mise à jour de Debian 10 vers Debian 11</span>
+        <a href="docs/Mise_a_jour_Debian_10_vers_11.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🪟</span>
+        <span class="proj-title">WSL : sous-système Windows pour Linux</span>
+        <a href="docs/WSL.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">⌨️</span>
+        <span class="proj-title">tmux : multiplexeur de terminaux</span>
+        <a href="docs/tmux.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🔁</span>
+        <span class="proj-title">Haute disponibilité DHCP</span>
+        <a href="docs/DHCP_failover.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🛡️</span>
+        <span class="proj-title">Installation de pfSense</span>
+        <a href="docs/pfSense_1_Installation.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🎛️</span>
+        <span class="proj-title">Configuration de base de pfSense</span>
+        <a href="docs/pfSense_2_Configuration_de_base.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🔒</span>
+        <span class="proj-title">Sécurisation de pfSense</span>
+        <a href="docs/pfSense_3_Securisation.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🪪</span>
+        <span class="proj-title">Authentification LDAP et LDAPS</span>
+        <a href="docs/pfSense_4_LDAP_LDAPS.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">📶</span>
+        <span class="proj-title">Portail captif</span>
+        <a href="docs/pfSense_5_Portail_captif.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🐞</span>
+        <span class="proj-title">Détection et prévention d'intrusion (Snort)</span>
+        <a href="docs/pfSense_6_Snort_IDS_IPS.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🔐</span>
+        <span class="proj-title">Réseau privé virtuel OpenVPN</span>
+        <a href="docs/pfSense_7_OpenVPN.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🖧</span>
+        <span class="proj-title">Configuration d'un commutateur</span>
+        <a href="docs/Configuration_commutateur.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🖧</span>
+        <span class="proj-title">Configuration d'un routeur</span>
+        <a href="docs/Configuration_routeur.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🌐</span>
+        <span class="proj-title">Configuration d'une passerelle</span>
+        <a href="docs/Configuration_passerelle.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🧪</span>
+        <span class="proj-title">Configuration de commutateurs (travaux pratiques)</span>
+        <a href="docs/TP_Configuration_commutateurs.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">✉️</span>
+        <span class="proj-title">Messagerie Zimbra</span>
+        <a href="docs/Zimbra.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🖥️</span>
+        <span class="proj-title">Serveur web Apache</span>
+        <a href="docs/Serveur_Apache.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">📋</span>
+        <span class="proj-title">Procédure de déploiement OCS Inventory</span>
+        <a href="docs/OCS_Inventory.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">📈</span>
+        <span class="proj-title">Supervision avec Nagios XI</span>
+        <a href="docs/Nagios_XI.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">📊</span>
+        <span class="proj-title">Nagios XI sur machine virtuelle CentOS</span>
+        <a href="docs/Nagios_XI_VM_CentOS.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">📊</span>
+        <span class="proj-title">Nagios XI sur machine virtuelle CentOS 7</span>
+        <a href="docs/Nagios_XI_VM_CentOS7.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🗄️</span>
+        <span class="proj-title">Base de données MySQL</span>
+        <a href="docs/MySQL.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">👥</span>
+        <span class="proj-title">Active Directory — document E5</span>
+        <a href="docs/E5_Active_Directory.pdf" target="_blank" rel="noopener" class="doc-btn">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">👤</span>
+        <span class="proj-title">Active Directory — variante Sitka</span>
+        <a href="#" class="doc-btn soon">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🎫</span>
+        <span class="proj-title">GLPI — document E5</span>
+        <a href="#" class="doc-btn soon">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🎧</span>
+        <span class="proj-title">GLPI — variante Sitka</span>
+        <a href="#" class="doc-btn soon">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">⌨️</span>
+        <span class="proj-title">SSH — document E5</span>
+        <a href="#" class="doc-btn soon">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">🧪</span>
+        <span class="proj-title">Travaux pratiques SSH</span>
+        <a href="#" class="doc-btn soon">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">📝</span>
+        <span class="proj-title">Mémo SSH</span>
+        <a href="#" class="doc-btn soon">📄 Documentation (PDF)</a>
+      </div>
+      <div class="proj-row">
+        <span class="proj-icon">⌨️</span>
+        <span class="proj-title">SSH Sitka</span>
+        <a href="#" class="doc-btn soon">📄 Documentation (PDF)</a>
+      </div>
+    </div>
+
+    <!-- ===== Projets en entreprise ===== -->
+    <div class="missions-section-label reveal"><span>▶ Projets en entreprise — Circle Consulting</span></div>
+    <div class="missions-grid cols-4">
+      <div class="m-card reveal delay-1">
+        <div class="m-card-bar" style="background:linear-gradient(90deg,#ff8a78,#ff5d73)"></div>
+        <div class="m-card-img"><img src="assets/img/sav-reparation.svg" alt="" loading="lazy"/></div>
+        <div class="m-card-inner">
+          <div class="m-card-meta"><span class="m-cat">Support</span><span class="m-badge soon">⏳ EN COURS</span></div>
+          <div class="m-title">SAV : réparation tablettes &amp; PC</div>
+          <p class="m-desc">Diagnostic des pannes, remplacement de pièces défectueuses, correction logicielle et tests avant retour client.</p>
+          <span class="m-btn disabled">📄 Doc bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="m-card reveal delay-2">
+        <div class="m-card-bar" style="background:linear-gradient(90deg,#06b6d4,#ef6f5e)"></div>
+        <div class="m-card-img"><img src="assets/img/installation.svg" alt="" loading="lazy"/></div>
+        <div class="m-card-inner">
+          <div class="m-card-meta"><span class="m-cat cyan">Déploiement</span><span class="m-badge soon">⏳ EN COURS</span></div>
+          <div class="m-title">Installation matériel &amp; logiciels</div>
+          <p class="m-desc">Installation et configuration du matériel et des logiciels pour les clients de l'entreprise.</p>
+          <span class="m-btn disabled">📄 Doc bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="m-card reveal delay-3">
+        <div class="m-card-bar" style="background:linear-gradient(90deg,#ff5d73,#ff8a78)"></div>
+        <div class="m-card-img"><img src="assets/img/configuration-pc.svg" alt="" loading="lazy"/></div>
+        <div class="m-card-inner">
+          <div class="m-card-meta"><span class="m-cat">Système</span><span class="m-badge soon">⏳ EN COURS</span></div>
+          <div class="m-title">Configuration de PC</div>
+          <p class="m-desc">Préparation et configuration de postes de travail : système, comptes, paramétrage et mise en service.</p>
+          <span class="m-btn disabled">📄 Doc bientôt disponible</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 2ème année ===== -->
+    <div class="locked-block reveal delay-2">
+      <span class="lock-icon">🔒</span>
+      <div class="lock-title">Projets de 2ème Année</div>
+      <div class="lock-sub">En cours de réalisation et de documentation</div>
+    </div>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

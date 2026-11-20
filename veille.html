@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veille — Vitalii Yurina</title>
+  <meta name="description" content="Veille technologique (épreuve E4) : la sécurité de pfSense — sources, méthode et analyses d'articles."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    /* ---------- PAGE : VEILLE (contenu) ---------- */
+    .v-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 3rem; }
+    .v-stat { background: var(--panel-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 1.1rem 1rem; text-align: center; transition: border-color .3s, transform .3s var(--ease); }
+    .v-stat:hover { border-color: var(--violet-l); transform: translateY(-4px); }
+    .v-stat-num { font-family: var(--font-head); font-size: 1.7rem; font-weight: 900; color: var(--violet-l); text-shadow: 0 0 24px rgba(255,138,120,.45); line-height: 1.2; }
+    .v-stat-lbl { font-family: var(--font-mono); font-size: .65rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-top: .3rem; }
+
+    .v-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3.5rem; }
+    .v-card { height: 100%; }
+    .v-card-head { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; }
+    .v-card-icon { width: 42px; height: 42px; flex-shrink: 0; border-radius: 10px; background: rgba(239,111,94,.1); border: 1px solid var(--card-border); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+    .v-card h3 { font-family: var(--font-head); font-size: .95rem; font-weight: 700; color: var(--white); line-height: 1.35; }
+    .v-card p { color: var(--grey); font-size: 1.02rem; line-height: 1.8; }
+    .v-card p + .tag-row { margin-top: 1.1rem; }
+    .v-time { display: inline-flex; align-items: center; gap: .4rem; margin-top: 1.1rem; font-family: var(--font-mono); font-size: .75rem; color: var(--green); background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.3); border-radius: 20px; padding: .25rem .9rem; }
+
+    .v-why { display: flex; gap: 1.2rem; align-items: flex-start; margin-bottom: 2.5rem; border-left: 3px solid var(--violet); }
+    .v-why:hover { transform: none; }
+    .v-why-icon { font-size: 2.2rem; line-height: 1; }
+    .v-why h3 { font-family: var(--font-head); font-size: .95rem; color: var(--white); margin-bottom: .5rem; }
+    .v-why p { color: var(--grey); font-size: 1.05rem; line-height: 1.8; margin-bottom: .9rem; }
+
+    .v-articles { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; margin-bottom: 3.5rem; }
+    .v-art { position: relative; display: flex; flex-direction: column; background: rgba(32,34,48,.95); border: 1px solid rgba(239,111,94,.18); border-radius: 10px; overflow: hidden; transition: border-color .35s, box-shadow .35s, transform .35s var(--ease); }
+    .v-art:hover { border-color: rgba(239,111,94,.55); box-shadow: 0 14px 40px rgba(239,111,94,.18); transform: translateY(-4px); }
+    .v-art-bar { height: 2px; background: linear-gradient(90deg, var(--violet), var(--neon), var(--cyan)); }
+    .v-art-inner { padding: 1.5rem 1.6rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
+    .v-art-meta { display: flex; justify-content: space-between; align-items: center; gap: .5rem; flex-wrap: wrap; margin-bottom: .9rem; }
+    .v-date { font-family: var(--font-mono); font-size: .7rem; color: var(--grey); background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 4px; padding: .15rem .6rem; }
+    .v-art h4 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--white); line-height: 1.4; margin-bottom: .5rem; }
+    .v-src { font-family: var(--font-mono); font-size: .75rem; color: var(--grey); margin-bottom: 1rem; }
+    .v-src b { color: var(--cyan); font-weight: 400; }
+    .v-block-label { font-family: var(--font-mono); font-size: .65rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--violet-l); margin-bottom: .35rem; }
+    .v-art p { color: var(--grey); font-size: .98rem; line-height: 1.75; margin-bottom: 1.1rem; }
+    .v-impact { margin-top: auto; background: rgba(6,182,212,.07); border: 1px solid rgba(6,182,212,.25); border-left: 3px solid var(--cyan); border-radius: 8px; padding: .9rem 1.1rem; }
+    .v-impact .v-block-label { color: var(--cyan); }
+    .v-impact p { margin: 0; color: var(--white); opacity: .9; }
+    .v-art .tag-row { margin-bottom: 1.1rem; }
+
+    .v-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+    .v-step { position: relative; background: var(--panel-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 1.4rem 1.2rem 1.2rem; transition: border-color .3s, transform .3s var(--ease); }
+    .v-step:hover { border-color: var(--violet-l); transform: translateY(-4px); }
+    .v-step-n { position: absolute; top: .6rem; right: .9rem; font-family: var(--font-head); font-size: 2.2rem; font-weight: 900; color: rgba(239,111,94,.12); line-height: 1; }
+    .v-step-icon { font-size: 1.5rem; margin-bottom: .6rem; display: block; }
+    .v-step h5 { font-family: var(--font-head); font-size: .75rem; letter-spacing: 1px; color: var(--violet-l); margin-bottom: .35rem; }
+    .v-step p { color: var(--grey); font-size: .92rem; line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .v-stats, .v-steps { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 750px) {
+      .v-two, .v-articles { grid-template-columns: 1fr; }
+      .v-why { flex-direction: column; gap: .6rem; }
+    }
+    @media (max-width: 450px) {
+      .v-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor"></div><div class="cursor-trail"></div>
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-glow"></div>
+
+  <nav class="navbar" id="navbar"></nav>
+
+  <main class="page-wrapper">
+    <div class="terminal-badge reveal">
+      <span class="term-user">vitalii</span><span class="term-path">@portfolio:~/veille$</span><span class="term-cmd">./scan.sh --topic pfsense</span><span class="term-cursor"></span>
+    </div>
+
+    <div class="section-header reveal">
+      <span class="section-num">// e4</span>
+      <h2 class="section-title">La Veille <span class="neon-text">Technologique</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- ===== Chiffres clés ===== -->
+    <div class="v-stats reveal delay-1">
+      <div class="v-stat"><div class="v-stat-num">4</div><div class="v-stat-lbl">Sources suivies</div></div>
+      <div class="v-stat"><div class="v-stat-num">30 min</div><div class="v-stat-lbl">Par jour</div></div>
+      <div class="v-stat"><div class="v-stat-num">2</div><div class="v-stat-lbl">Articles analysés</div></div>
+      <div class="v-stat"><div class="v-stat-num">1</div><div class="v-stat-lbl">Sujet : pfSense</div></div>
+    </div>
+
+    <!-- ===== Définition + outils ===== -->
+    <div class="v-two">
+      <div class="cyber-card v-card reveal delay-1">
+        <div class="card-corner tl"></div><div class="card-corner tr"></div><div class="card-corner bl"></div><div class="card-corner br"></div>
+        <div class="v-card-head">
+          <div class="v-card-icon">📡</div>
+          <h3>Qu'est-ce qu'une veille technologique ?</h3>
+        </div>
+        <p>La veille technologique se définit comme tous les moyens déployés par une entreprise pour collecter et analyser des informations techniques afin de soutenir sa croissance. Cette démarche doit la tenir en alerte face aux changements, qu'ils soient scientifiques ou techniques.</p>
+      </div>
+
+      <div class="cyber-card v-card reveal delay-2">
+        <div class="card-corner tl"></div><div class="card-corner tr"></div><div class="card-corner bl"></div><div class="card-corner br"></div>
+        <div class="v-card-head">
+          <div class="v-card-icon">🧰</div>
+          <h3>Qu'est-ce que j'utilise pour ma veille technologique ?</h3>
+        </div>
+        <p>Pour ma veille technologique, j'utilise principalement <strong>Google Actualités</strong> pour suivre les dernières informations, le <strong>CERT-FR</strong> pour les alertes de sécurité officielles, <strong>IT-Connect</strong> pour les tutoriels francophones, et <strong>CVE Mitre</strong> pour le suivi des vulnérabilités.</p>
+        <div class="tag-row">
+          <span class="tag">Google Actualités</span>
+          <span class="tag orange">CERT-FR</span>
+          <span class="tag cyan">IT-Connect</span>
+          <span class="tag green">CVE Mitre</span>
+        </div>
+        <span class="v-time">⏱ ≈ 30 minutes par jour</span>
+      </div>
+    </div>
+
+    <!-- ===== Sujet de veille ===== -->
+    <div class="section-header reveal">
+      <span class="section-num">// sujet</span>
+      <h2 class="section-title">Mon sujet de veille : la sécurité de <span class="neon-text">pfSense</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="cyber-card v-why reveal delay-1">
+      <div class="card-corner tl"></div><div class="card-corner tr"></div><div class="card-corner bl"></div><div class="card-corner br"></div>
+      <div class="v-why-icon">🛡️</div>
+      <div>
+        <h3>Pourquoi ce sujet ?</h3>
+        <p>J'utilise pfSense dans mes projets : filtrage, VPN, portail captif. C'est le pare-feu qui protège le réseau, donc je dois suivre ses failles et ses mises à jour.</p>
+        <div class="tag-row">
+          <span class="tag orange">Filtrage</span>
+          <span class="tag">VPN</span>
+          <span class="tag cyan">Portail captif</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Articles ===== -->
+    <div class="v-articles">
+      <article class="v-art reveal delay-1">
+        <div class="v-art-bar"></div>
+        <div class="v-art-inner">
+          <div class="v-art-meta">
+            <span class="v-date">📅 19/08/2026</span>
+            <span class="tag orange">CVE-2026-67189</span>
+          </div>
+          <h4>Faille XSS stockée CVE-2026-67189</h4>
+          <div class="v-src">Source : <b>SentinelOne</b></div>
+          <div class="tag-row">
+            <span class="tag">XSS stockée</span>
+            <span class="tag cyan">CE ≤ 2.8.1</span>
+            <span class="tag green">Correctif : CE 2.9.0 / Plus 26.07</span>
+          </div>
+          <div class="v-block-label">Résumé</div>
+          <p>Une faille a été trouvée dans pfSense. Un attaquant qui contrôle des enregistrements PTR peut faire exécuter du code JavaScript dans le navigateur d'un administrateur. Cela peut aller jusqu'à la prise de contrôle du pare-feu. Elle touche pfSense CE jusqu'à la 2.8.1 et pfSense Plus avant la 26.07. Pour la corriger, il faut passer en pfSense CE 2.9.0 ou en Plus 26.07 minimum.</p>
+          <div class="v-impact">
+            <div class="v-block-label">Ce que ça change pour moi</div>
+            <p>Je dois vérifier la version de mon pfSense et le mettre à jour. Je dois aussi surveiller les logs et les changements dans la configuration pour repérer des comptes ou des règles suspects.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="v-art reveal delay-2">
+        <div class="v-art-bar"></div>
+        <div class="v-art-inner">
+          <div class="v-art-meta">
+            <span class="v-date">📅 30/04/2026</span>
+            <span class="tag cyan">Alerte CERT-FR</span>
+          </div>
+          <h4>Alerte CERT-FR : faille XSS pfSense</h4>
+          <div class="v-src">Source : <b>CraftedSignal</b> (d'après le CERT-FR)</div>
+          <div class="tag-row">
+            <span class="tag">XSS</span>
+            <span class="tag cyan">CE ≤ 2.8.1</span>
+            <span class="tag orange">Plus ≤ 26.03</span>
+          </div>
+          <div class="v-block-label">Résumé</div>
+          <p>Le CERT-FR a publié une alerte sur une faille XSS dans pfSense. Elle permet à un attaquant d'injecter du code malveillant. Elle touche pfSense CE 2.8.1 et avant, et pfSense Plus 26.03 et avant. L'alerte vient du bulletin de sécurité de Netgate, l'éditeur de pfSense.</p>
+          <div class="v-impact">
+            <div class="v-block-label">Ce que ça change pour moi</div>
+            <p>Je dois suivre les bulletins du CERT-FR et de Netgate, car ils donnent les versions touchées. Je dois aussi limiter l'accès à l'interface web de pfSense aux administrateurs.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- ===== Méthode ===== -->
+    <div class="section-header reveal">
+      <span class="section-num">// méthode</span>
+      <h2 class="section-title">Ma routine de <span class="neon-text">veille</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="v-steps">
+      <div class="v-step reveal delay-1"><span class="v-step-n">01</span><span class="v-step-icon">🔎</span><h5>COLLECTER</h5><p>Je parcours mes 4 sources : actualités, alertes CERT-FR, tutoriels et CVE.</p></div>
+      <div class="v-step reveal delay-2"><span class="v-step-n">02</span><span class="v-step-icon">🗂️</span><h5>TRIER</h5><p>Je garde ce qui concerne pfSense et mes projets.</p></div>
+      <div class="v-step reveal delay-3"><span class="v-step-n">03</span><span class="v-step-icon">🧠</span><h5>ANALYSER</h5><p>Je note les versions touchées, le risque et le correctif.</p></div>
+      <div class="v-step reveal delay-4"><span class="v-step-n">04</span><span class="v-step-icon">⚙️</span><h5>APPLIQUER</h5><p>Je vérifie ma version, je mets à jour et je surveille les logs.</p></div>
+    </div>
+
+    <div class="btn-row center reveal delay-2">
+      <a href="missions.html" class="btn btn-primary">🚀 Voir mes projets pfSense</a>
+      <a href="contact.html" class="btn btn-ghost">✉️ Me contacter</a>
+    </div>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
