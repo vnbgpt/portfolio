@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#232538"/><stop offset="1" stop-color="#15161f"/></linearGradient>
+<pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" stroke="#06b6d4" stroke-opacity=".08"/></pattern>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#06b6d4" stop-opacity=".22"/><stop offset="1" stop-color="#06b6d4" stop-opacity="0"/></radialGradient></defs>
+<rect width="800" height="300" fill="url(#bg)"/><rect width="800" height="300" fill="url(#grid)"/><ellipse cx="400" cy="150" rx="330" ry="130" fill="url(#glow)"/>
+<ellipse cx="400" cy="150" rx="250" ry="110" stroke="#06b6d4" stroke-width="3"/><ellipse cx="400" cy="150" rx="215" ry="88" stroke="#06b6d4" stroke-width="2" stroke-opacity=".6"/>
+<ellipse cx="400" cy="150" rx="180" ry="66" stroke="#fb923c" stroke-width="2.5"/>
+<rect x="290" y="112" width="220" height="76" rx="4" stroke="#22c55e" stroke-width="2" fill="#22c55e" fill-opacity=".12"/><line x1="400" y1="112" x2="400" y2="188" stroke="#22c55e" stroke-width="1.5"/><circle cx="400" cy="150" r="14" stroke="#22c55e" stroke-width="1.5"/>
+<rect x="290" y="136" width="22" height="28" stroke="#22c55e" stroke-width="1.5"/><rect x="488" y="136" width="22" height="28" stroke="#22c55e" stroke-width="1.5"/>
+<rect x="60" y="40" width="130" height="56" rx="6" stroke="#06b6d4" stroke-width="2" fill="#15161f"/><text x="125" y="63" fill="#06b6d4" font-family="Share Tech Mono, monospace" font-size="12" text-anchor="middle">RESTAURANT</text><text x="125" y="83" fill="#f0f0ff" font-family="Share Tech Mono, monospace" font-size="11" text-anchor="middle">VLAN · Wi-Fi · POS</text>
+<path d="M190 68 L250 100" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="5 4"/>
+<rect x="610" y="200" width="130" height="56" rx="6" stroke="#ff8a78" stroke-width="2" fill="#15161f"/><text x="675" y="223" fill="#ff8a78" font-family="Share Tech Mono, monospace" font-size="12" text-anchor="middle">SÉCURITÉ</text><text x="675" y="243" fill="#f0f0ff" font-family="Share Tech Mono, monospace" font-size="11" text-anchor="middle">PCI-DSS · AD · GPO</text>
+<path d="M610 228 L550 200" stroke="#ff8a78" stroke-width="1.5" stroke-dasharray="5 4"/>
+</svg>

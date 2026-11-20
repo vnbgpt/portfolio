@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#232538"/><stop offset="1" stop-color="#15161f"/></linearGradient>
+ <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" stroke="#fb923c" stroke-opacity=".08"/></pattern>
+ <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fb923c" stop-opacity=".25"/><stop offset="1" stop-color="#fb923c" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="400" height="200" fill="url(#bg)"/><rect width="400" height="200" fill="url(#grid)"/>
+<ellipse cx="200" cy="100" rx="150" ry="80" fill="url(#glow)"/>
+<path d="M130 70 A70 70 0 0 1 270 70" stroke="#fb923c" stroke-width="2"/><path d="M150 85 A50 50 0 0 1 250 85" stroke="#fb923c" stroke-width="2" stroke-opacity=".7"/><path d="M170 100 A30 30 0 0 1 230 100" stroke="#fb923c" stroke-width="2" stroke-opacity=".5"/><circle cx="200" cy="112" r="4" stroke="#fb923c" stroke-width="0" fill="#fb923c"/><rect x="140" y="125" width="120" height="55" rx="4" stroke="#06b6d4" stroke-width="2" fill="none"/><rect x="150" y="135" width="100" height="12" rx="2" stroke="#f0f0ff" stroke-width="1" fill="none"/><rect x="150" y="152" width="100" height="12" rx="2" stroke="#f0f0ff" stroke-width="1" fill="none"/><rect x="165" y="169" width="70" height="7" rx="2" stroke="#22c55e" stroke-width="0" fill="#22c55e"/><text x="200" y="144" fill="#f0f0ff" font-family="Share Tech Mono, monospace" font-size="8" text-anchor="middle">login</text><text x="200" y="161" fill="#f0f0ff" font-family="Share Tech Mono, monospace" font-size="8" text-anchor="middle">••••••</text>
+</svg>

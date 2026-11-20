@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#232538"/><stop offset="1" stop-color="#15161f"/></linearGradient>
+ <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" stroke="#fb923c" stroke-opacity=".08"/></pattern>
+ <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fb923c" stop-opacity=".25"/><stop offset="1" stop-color="#fb923c" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="400" height="200" fill="url(#bg)"/><rect width="400" height="200" fill="url(#grid)"/>
+<ellipse cx="200" cy="100" rx="150" ry="80" fill="url(#glow)"/>
+<path d="M200 40 L240 55 V100 C240 130 220 150 200 160 C180 150 160 130 160 100 V55 Z" stroke="#fb923c" stroke-width="2.5" fill="#fb923c" fill-opacity=".1"/><path d="M185 100 L197 112 L218 88" stroke="#22c55e" stroke-width="3"/><rect x="40" y="80" width="70" height="40" rx="4" stroke="#06b6d4" stroke-width="2" fill="none"/><text x="75" y="104" fill="#06b6d4" font-family="Share Tech Mono, monospace" font-size="11" text-anchor="middle">SITE A</text><rect x="290" y="80" width="70" height="40" rx="4" stroke="#06b6d4" stroke-width="2" fill="none"/><text x="325" y="104" fill="#06b6d4" font-family="Share Tech Mono, monospace" font-size="11" text-anchor="middle">SITE B</text><line x1="110" y1="100" x2="160" y2="100" stroke="#06b6d4" stroke-width="2" stroke-dasharray="5 4"/><line x1="240" y1="100" x2="290" y2="100" stroke="#06b6d4" stroke-width="2" stroke-dasharray="5 4"/><text x="135" y="92" fill="#22c55e" font-family="Share Tech Mono, monospace" font-size="10" text-anchor="middle">VPN</text><text x="265" y="92" fill="#22c55e" font-family="Share Tech Mono, monospace" font-size="10" text-anchor="middle">VPN</text><text x="200" y="185" fill="#fb923c" font-family="Share Tech Mono, monospace" font-size="11" text-anchor="middle">pfSense · ACL · SSH</text>
+</svg>
